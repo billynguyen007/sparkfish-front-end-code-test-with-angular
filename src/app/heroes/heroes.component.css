@@ -53,7 +53,9 @@
     border-radius: 4px 0 0 4px;
   }
   
-  
+  mat-spinner {
+    stroke: blue;
+  }
   /*
   Copyright Google LLC. All Rights Reserved.
   Use of this source code is governed by an MIT-style license that

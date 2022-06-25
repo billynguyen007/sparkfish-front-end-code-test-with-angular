@@ -20,6 +20,7 @@ export class HeroesComponent implements OnInit {
     }],
     total_results: ""
   };
+  isLoading = false;
 
   constructor(private messageService: MessageService) { }
 
@@ -28,11 +29,13 @@ export class HeroesComponent implements OnInit {
   }
 
   search(): void {
+    this.isLoading = true;
     fetch(this.APIBaseUrl + `search/${this.searchQuery}`)
     .then(response => response.json()).then(
       (result) => (
         this.searchResults = result,
-        localStorage.setItem("slips", JSON.stringify(result.slips))
+        localStorage.setItem("slips", JSON.stringify(result.slips)),
+        this.isLoading = false
       )
     );
   }

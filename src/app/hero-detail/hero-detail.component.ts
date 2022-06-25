@@ -24,7 +24,7 @@ export class HeroDetailComponent implements OnInit {
     let slips: any = localStorage.getItem("slips");
     let slipsList: [] = JSON.parse(slips);
 
-    this.hero = slipsList.find((slip) => {
+    this.hero = slipsList.find((slip: any) => {
       if (slip.id == id) 
         return slip;
     })

@@ -7,6 +7,9 @@
   <li>Search Query: {{searchQuery}}</li>
   <li>Result Count: {{searchResults.total_results}}</li>
 </ul>
+<div>
+  <mat-spinner *ngIf="isLoading" diameter="30"></mat-spinner>
+</div>
 <ul class="heroes">
   <li *ngFor="let hero of searchResults.slips">
     <a routerLink="/detail/{{hero.id}}">
