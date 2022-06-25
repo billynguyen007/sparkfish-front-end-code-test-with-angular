@@ -1,0 +1,16 @@
+<h2>My Advices</h2>
+<div id="searchBox">
+  <input type="text" name="searchBoxQuery" id="searchBoxQuery" [(ngModel)]="searchQuery" (keyup.enter)="onEnter()"/>
+  <!-- // Style the searchbox -->
+</div>
+<ul>
+  <li>Search Query: {{searchQuery}}</li>
+  <li>Result Count: {{searchResults.total_results}}</li>
+</ul>
+<ul class="heroes">
+  <li *ngFor="let hero of searchResults.slips">
+    <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.date}}
+    </a>
+  </li>
+</ul>
